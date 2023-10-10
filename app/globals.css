@@ -29,3 +29,15 @@
 .menu-lg {
   background-color: var(--Dark-Violet);
 }
+
+.custom-form {
+  background-color: var(--Dark-Violet);
+  background-image: url('../assets/images/bg-shorten-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+
+.shorten-btn {
+  background-color: var(--Cyan);
+}

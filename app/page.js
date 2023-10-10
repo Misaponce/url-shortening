@@ -1,5 +1,5 @@
-import { Navbar } from '@/components'
-import { Hero } from '@/pages'
+import { CustomForm, Navbar } from '@/components'
+import Hero from '@/pages/Hero'
 import Image from 'next/image'
 
 export default function Home() {
@@ -8,13 +8,10 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section>
+        <section className='flex flex-col justify-center items-center'>
           <Hero />
           {/* Shorten link input */}
-          <div>
-            <input type='text' placeholder='Shorten a link here'/>
-            <button>Shorten it!</button>
-          </div>
+          <CustomForm />
         </section>
         {/* Info Section */}
         <section>
