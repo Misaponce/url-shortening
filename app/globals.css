@@ -20,11 +20,19 @@
   --Grayish-Violet: hsl(257, 7%, 63%);
   --Very-Dark-Blue: hsl(255, 11%, 22%);
   --Very-Dark-Violet: hsl(260, 8%, 14%);
+
+  /* Background */
+
+  --bg-shorten-mobile: url('../assets/images/bg-shorten-mobile.svg');
+  --bg-shorten-desktop: url('../assets/images/bg-shorten-desktop.svg');
+
+  --bg-boost-mobile: url('../assets/images/bg-boost-mobile.svg');
+  --bg-boost-desktop: url('../assets/images/bg-boost-desktop.svg');
 }
 
-/* * {
+* {
   border: solid 1px red;
-} */
+}
 
 .menu-lg {
   background-color: var(--Dark-Violet);
@@ -32,12 +40,42 @@
 
 .custom-form {
   background-color: var(--Dark-Violet);
-  background-image: url('../assets/images/bg-shorten-mobile.svg');
+  background-image: var(--bg-shorten-mobile);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
 }
 
-.shorten-btn {
+.shorten-btn, .boost-btn, .hero-btn {
   background-color: var(--Cyan);
+}
+
+.boost-bar {
+  background-color: var(--Dark-Violet);
+  background-image: var(--bg-boost-mobile);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.footer {
+  background-color: var(--Very-Dark-Violet);
+}
+
+/* Responsive Design */
+@media screen and (min-width: 1440px) {
+  .custom-form {
+    background-image: var(--bg-shorten-desktop);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
+
+  .boost-bar {
+    background-color: var(--Dark-Violet);
+    background-image: var(--bg-boost-desktop);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+  }
 }
