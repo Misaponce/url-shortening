@@ -10,20 +10,18 @@ export default function Home() {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className='flex flex-col justify-center items-center'>
+        <section>
           <Hero />
-          {/* Shorten link input */}
-          <CustomForm />
         </section>
+      {/* Shorten link form*/}
+        <CustomForm />
         {/* Info Section */}
         <Statistics />
       </main>
-      <footer>
-        {/* Boost links bar */}
-        <Boost />
-        {/* Footer Links */}
-        <Footer />
-      </footer>
+      {/* Boost links bar */}
+      <Boost />
+      {/* Footer Links */}
+      <Footer />
     </>
   )
 }

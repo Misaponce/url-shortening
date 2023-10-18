@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import HeroImg from '../assets/images/illustration-working.svg';
+import { CustomForm } from '@/components';
 
 const Hero = () => {
   return (

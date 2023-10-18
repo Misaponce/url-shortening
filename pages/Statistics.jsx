@@ -4,7 +4,7 @@ import React from 'react'
 
 const Statistics = () => {
   return (
-    <section className='min-h-screen flex flex-col items-center'>
+    <section className='min-h-screen flex flex-col items-center p-5'>
       <h2>
         Advanced Statistics
       </h2>
@@ -13,7 +13,7 @@ const Statistics = () => {
       </p>
 
       {/* cards container */}
-      <div className='cards-container flex flex-col items-center sm:flex-row'>
+      <div className='cards-container flex flex-col items-center sm:flex-row my-5'>
         {Cards.map((card) => (
           <div key={card.title}>
             <CustomCard 
