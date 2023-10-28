@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className='navbar bg-base-100'>
       <div className='navbar-start'>
         <button className='btn btn-ghost'>
-          <Image src={Logo}/>
+          <Image src={Logo} alt='logo'/>
         </button>
         {/* Main Navbar */}
         <div className='hidden lg:flex'>

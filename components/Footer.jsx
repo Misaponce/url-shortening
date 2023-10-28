@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="flex flex-col 
               justify-start items-start gap-6 sm:border-r px-5">
               <Link href="/">
-                <Image src={Logo} className='mt-4 object-contain'alt='logo'/>
+                <Image src={Logo} className='mt-4 object-contain' alt='logo'/>
               </Link>                    
               <p className="text-base 
               text-gry-700 sm:me-2">

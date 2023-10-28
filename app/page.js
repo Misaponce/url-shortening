@@ -2,9 +2,9 @@ import { CustomForm, Footer, Navbar } from '@/components'
 import Boost from '@/pages/Boost';
 import Hero from '@/pages/Hero';
 import Statistics from '@/pages/Statistics';
-import Image from 'next/image'
 
 export default function Home() {
+
   return (
     <>
       <Navbar />
