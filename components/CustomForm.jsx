@@ -7,7 +7,9 @@ import { shortenURL } from '../api/httpClient';
 const CustomForm = () => {
   
   const [inputURL, setInputUrl] = useState('');
+  const [shortLink, setShortLink] = useState('');
   const [linkList, setLinkList] = useState([]);
+  const [buttonText, setButtonText] = useState('Copy!')
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ const CustomForm = () => {
       }
       
       setLinkList([...linkList, linkObject]);
+      setShortLink(shortLink);
     } catch (error) {
       console.error(error);
     }
@@ -32,6 +35,12 @@ const CustomForm = () => {
   //Catching user input link
   const handleInputChange = (e) => {
     setInputUrl(e.target.value)
+  }
+
+  // Handling Link Copy
+  const handleCopy = () => {
+    navigator.clipboard.writeText(shortLink);
+    setButtonText('Copied!')
   }
 
   return (
@@ -52,12 +61,16 @@ const CustomForm = () => {
         <ul className='join join-vertical'>
           {linkList.map((item, index) => (
             <li key={index} className='join-item m-1'>
-              <div className="card w-60 sm:w-80 bg-base-100 shadow-xl">
+              <div className="card w-80 sm:min-w-80 bg-base-100 shadow-xl overflow-hidden">
                 <div className="card-body items-center text-center">
-                  <h3 className="text-sm">{item.longLink}</h3>
-                  <h2 className="card-title">{item.shortLink}</h2>
+                  <p className="text-sm truncate">{item.longLink}</p>
+                  <p className="text-base">{item.shortLink}</p>
                   <div className="card-actions">
-                    <button className="btn btn-primary">Copy!</button>
+                    <button className="btn btn-primary"
+                      onClick={handleCopy}
+                    >
+                      {buttonText}
+                    </button>
                   </div>
                 </div>
               </div>
