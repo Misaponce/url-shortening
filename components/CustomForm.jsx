@@ -46,7 +46,7 @@ const CustomForm = () => {
   return (
     <div className='flex flex-col justify-center items-center'>
       {/* Form */}
-      <form onSubmit={handleFormSubmit} className='custom-form flex flex-col justify-center m-8 p-4 sm:py-6 gap-4 sm:gap-1 rounded-[12px] sm:flex-row sm:w-3/5'>
+      <form onSubmit={handleFormSubmit} className='custom-form flex flex-col justify-center m-8 p-4 sm:py-6 gap-4 sm:gap-1 rounded-[12px] sm:flex-row sm:w-3/5 shadow-xl'>
           <input 
               type='text' 
               value={inputURL}
@@ -58,15 +58,19 @@ const CustomForm = () => {
       </form>
       {/* Shorten links */}
       <div>
-        <ul className='join join-vertical'>
+        <div className='join join-vertical'>
           {linkList.map((item, index) => (
-            <li key={index} className='join-item m-1'>
-              <div className="card w-80 sm:min-w-80 bg-base-100 shadow-xl overflow-hidden">
-                <div className="card-body items-center text-center">
-                  <p className="text-sm truncate">{item.longLink}</p>
-                  <p className="text-base">{item.shortLink}</p>
-                  <div className="card-actions">
-                    <button className="btn btn-primary"
+            <div key={index} className='join-item mb-4'>
+              <div className="w-80 sm:w-full py-2 bg-base-100 shadow-xl rounded-[10px] overflow-hidden">
+                <div className="items-center sm:flex">
+                  {/* Links */}
+                  <div className='border-b-2 sm:border-b-0 rounded-none p-3 sm:py-1 sm:px-2 sm:mx-2 gap-2'>
+                    <p className="text-base truncate">{item.longLink}</p>
+                  </div>
+                  {/* Button */}
+                  <div className="sm:flex sm:items-center p-3 sm:py-1 sm:px-2 sm:mx-2 gap-2">
+                    <p className="text-base mb-3 sm:mb-0 link link-accent">{item.shortLink}</p>
+                    <button className="btn btn-primary copy-btn text-white border-none w-full sm:w-auto sm:m-1 sm:px-8"
                       onClick={handleCopy}
                     >
                       {buttonText}
@@ -74,9 +78,9 @@ const CustomForm = () => {
                   </div>
                 </div>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   )

@@ -8,6 +8,7 @@
   /* Primary */
 
   --Cyan: hsl(180, 66%, 49%);
+  --Grayish-Cyan: hsl(180, 66%, 68%);
   --Dark-Violet: hsl(257, 27%, 26%);
 
   /* Secondary */
@@ -16,7 +17,7 @@
 
   /* Neutral */
 
-  --Gray: hsl(0, 0%, 75%);
+  --Gray: #F8F8F8;
   --Grayish-Violet: hsl(257, 7%, 63%);
   --Very-Dark-Blue: hsl(255, 11%, 22%);
   --Very-Dark-Violet: hsl(260, 8%, 14%);
@@ -42,6 +43,10 @@ html {
   background-color: var(--Dark-Violet);
 }
 
+.hero {
+  background-color: #fff;
+}
+
 .custom-form {
   background-color: var(--Dark-Violet);
   background-image: var(--bg-shorten-mobile);
@@ -50,8 +55,13 @@ html {
   background-position: right;
 }
 
-.shorten-btn, .boost-btn, .hero-btn {
+.shorten-btn, .boost-btn, .hero-btn, .copy-btn {
   background-color: var(--Cyan);
+  transition: all 0.3s ease-in-out;
+}
+
+.shorten-btn:hover, .boost-btn:hover, .hero-btn:hover, .copy-btn:hover {
+  background-color: var(--Grayish-Cyan);
 }
 
 .card-logo-container {
