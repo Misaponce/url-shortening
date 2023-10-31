@@ -5,12 +5,14 @@ import React from 'react'
 const Statistics = () => {
   return (
     <section className='min-h-screen flex flex-col items-center p-5'>
-      <h2>
-        Advanced Statistics
-      </h2>
-      <p>
-        Track how your links are performing across the web with our advanced statistics dashboard
-      </p>
+      <div className='my-8 flex flex-col items-center text-center'>
+        <h2 className='text-4xl p-4 font-extrabold'>
+          Advanced Statistics
+        </h2>
+        <p className='text-gray-400 p-4 w-3/4 sm:w-1/2'>
+          Track how your links are performing across the web with our advanced statistics dashboard
+        </p>
+      </div>
 
       {/* cards container */}
       <div className='cards-container flex flex-col items-center sm:flex-row my-5'>
