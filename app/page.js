@@ -6,7 +6,7 @@ import Statistics from '@/pages/Statistics';
 export default function Home() {
 
   return (
-    <>
+    <div>
       <Navbar />
       <main>
         {/* Hero Section */}
@@ -22,6 +22,6 @@ export default function Home() {
       <Boost />
       {/* Footer Links */}
       <Footer />
-    </>
+    </div>
   )
 }

@@ -10,7 +10,7 @@ export const Cards = [
   },
   {
     title: 'Detailed Records',
-    description: "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions",
+    description: "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
     logo: DetailsLogo,
   },
   {

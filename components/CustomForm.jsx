@@ -9,7 +9,7 @@ const CustomForm = () => {
   const [inputURL, setInputUrl] = useState('');
   const [shortLink, setShortLink] = useState('');
   const [linkList, setLinkList] = useState([]);
-  const [buttonText, setButtonText] = useState('Copy!')
+  const [buttonText, setButtonText] = useState(Array(linkList.length).fill('Copy'))
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +25,12 @@ const CustomForm = () => {
       }
       
       setLinkList([...linkList, linkObject]);
+
+      // Setting short link to be use on copy function
       setShortLink(shortLink);
+
+      // Setting "Copy" text on each button to make in independent
+      setButtonText([...buttonText, 'Copy!']);
     } catch (error) {
       console.error(error);
     }
@@ -38,9 +43,14 @@ const CustomForm = () => {
   }
 
   // Handling Link Copy
-  const handleCopy = () => {
-    navigator.clipboard.writeText(shortLink);
-    setButtonText('Copied!')
+  const handleCopy = (index) => {
+    navigator.clipboard.writeText(linkList[index].shortLink);
+
+    //Updating the buttonText variable to say "Copied!" for the specific button based on the index
+    const updatedButtonText = [...buttonText];
+    updatedButtonText[index] = 'Copied!';
+
+    setButtonText(updatedButtonText)
   }
 
   return (
@@ -71,9 +81,10 @@ const CustomForm = () => {
                   <div className="sm:flex sm:items-center p-3 sm:py-1 sm:px-2 sm:mx-2 gap-2">
                     <p className="text-base mb-3 sm:mb-0 link link-accent">{item.shortLink}</p>
                     <button className="btn btn-primary copy-btn text-white border-none w-full sm:w-auto sm:m-1 sm:px-8"
-                      onClick={handleCopy}
+                      // Passing the function reference so it will be called only when the button is clicked to avoid infinite loop and too many re-renders
+                      onClick={() => handleCopy(index)}
                     >
-                      {buttonText}
+                      {buttonText[index]}
                     </button>
                   </div>
                 </div>

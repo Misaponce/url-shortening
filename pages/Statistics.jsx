@@ -15,7 +15,11 @@ const Statistics = () => {
       </div>
 
       {/* cards container */}
-      <div className='cards-container flex flex-col items-center sm:flex-row my-5'>
+      <div className='cards-container relative flex gap-3 flex-col items-center sm:flex-row my-5'>
+        {/* Cyan Bar */}
+        <hr className='border-4 border-cyan-300 w-full sm:w-3/4
+        absolute transform rotate-90 sm:rotate-0 top-2/4 sm:left-2'>
+        </hr>
         {Cards.map((card) => (
           <div key={card.title}>
             <CustomCard 
