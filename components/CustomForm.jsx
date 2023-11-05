@@ -72,7 +72,7 @@ const CustomForm = () => {
           {linkList.map((item, index) => (
             <div key={index} className='join-item mb-4'>
               <div className="w-80 sm:w-full py-2 bg-base-100 shadow-xl rounded-[10px] overflow-hidden">
-                <div className="items-center sm:flex">
+                <div className="items-center justify-between sm:flex">
                   {/* Links */}
                   <div className='border-b-2 sm:border-b-0 rounded-none p-3 sm:py-1 sm:px-2 sm:mx-2 gap-2'>
                     <p className="text-base truncate">{item.longLink}</p>
